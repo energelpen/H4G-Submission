@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Minimart @ MWH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Function to handle login submission and simulate login
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get the values from the input fields
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check if both fields are not blank
+      if (username !== "" && password !== "") {
+        // Redirect to dashboard page (simulated successful login)
+        window.location.href = "dashboard.html"; // Change this to your actual dashboard page
+      } else {
+        // Show error message if fields are blank
+        alert("Both username and password are required.");
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-pink-100 via-rose-200 to-orange-100 min-h-screen flex flex-col justify-center items-center">
+
+  <!-- Logo Section -->
+  <header class="absolute top-4 left-4">
+    <a href="index.html">
+      <img
+        src="Site\images\image.png"
+        alt="Logo"
+        class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain"
+      />
+    </a>
+  </header>
+
+  <!-- Login Form -->
+  <main class="flex flex-col items-center px-4 text-center w-full max-w-md">
+    <!-- Login Heading -->
+    <h1 class="text-emerald-700 text-3xl md:text-4xl lg:text-5xl font-semibold font-['Palanquin Dark'] mb-6">
+      Login to Minimart
+    </h1>
+
+    <!-- Login Form -->
+    <form
+      action="#"
+      method="POST"
+      class="bg-white shadow-lg rounded-2xl mt-6 p-6 w-full"
+      onsubmit="handleLogin(event)" <!-- Triggering the handleLogin function on submit -->
+    >
+      <div class="mb-4">
+        <label
+          for="username"
+          class="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:ring-emerald-500"
+          placeholder="Enter your username"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          for="password"
+          class="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:ring-emerald-500"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white text-lg font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-gradient-to-r hover:from-emerald-600 hover:to-emerald-500 transition duration-300 w-full">
+        Login
+      </button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-8 text-sm text-gray-600 text-center">
+    © Hack4Good 2025 - Team Hackathon Submission
+  </footer>
+</body>
+</html>
